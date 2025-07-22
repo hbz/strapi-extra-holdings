@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_item_items",
+  "info": {
+    "displayName": "item",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "callNumber": {
+      "type": "string"
+    },
+    "inventoryNumber": {
+      "type": "string"
+    },
+    "serialNumber": {
+      "type": "string"
+    },
+    "holdingId": {
+      "type": "string"
+    },
+    "additionalCallNumber": {
+      "type": "string"
+    },
+    "dateCreated": {
+      "type": "date"
+    },
+    "dateModified": {
+      "type": "date"
+    },
+    "dateAustausch": {
+      "type": "date"
+    },
+    "internalNote": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}

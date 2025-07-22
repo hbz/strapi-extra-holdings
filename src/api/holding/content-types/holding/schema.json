@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "holdings",
+  "info": {
+    "singularName": "holding",
+    "pluralName": "holdings",
+    "displayName": "holding",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "almaMmsId": {
+      "type": "uid"
+    },
+    "hbzId": {
+      "type": "uid"
+    },
+    "Item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "item.item"
+    },
+    "lobidUri": {
+      "type": "customField",
+      "options": {
+        "source": {
+          "hbz-Verbundkatalog": true
+        }
+      },
+      "customField": "plugin::lookup.lookup"
+    },
+    "additionalCallNumber2": {
+      "type": "string"
+    },
+    "dateCreated": {
+      "type": "date"
+    },
+    "dateModified": {
+      "type": "date"
+    },
+    "dateAustausch": {
+      "type": "date"
+    },
+    "holdingId": {
+      "type": "string"
+    },
+    "zdbId": {
+      "type": "string"
+    }
+  }
+}
