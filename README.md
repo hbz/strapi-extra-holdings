@@ -20,8 +20,8 @@ To execute docker commands without sudo, add your Unix user to the `docker` grou
 
 ### Clone repo
 
-    $ git clone https://github.com/hbz/strapi-rpb.git
-    $ cd strapi-rpb
+    $ git clone https://github.com/hbz/strapi-extra-holdings.git
+    $ cd strapi-extra-holdings
 
 ### Add `.env` file
 
