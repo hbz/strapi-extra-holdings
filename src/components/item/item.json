@@ -16,7 +16,7 @@
     "serialNumber": {
       "type": "string"
     },
-    "holdingId": {
+    "itemId": {
       "type": "string"
     },
     "additionalCallNumber": {

@@ -18,7 +18,7 @@
     "hbzId": {
       "type": "uid"
     },
-    "Item": {
+    "hasItem": {
       "type": "component",
       "repeatable": true,
       "component": "item.item"
@@ -49,6 +49,11 @@
     },
     "zdbId": {
       "type": "string"
+    },
+    "holdingInfo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "holding-info.holding-info"
     }
   }
 }
