@@ -69,16 +69,6 @@ services:
       timeout: 5s
       retries: 3
 
-  adminer:
-    image: adminer
-    ports:
-      - 8080:8080
-    networks:
-      - strapi-de-sol1
-    restart: always
-    depends_on:
-      - strapi-de-sol1DB
-
 volumes:
   strapi-de-sol1-data:
   lookup_node_modules:
