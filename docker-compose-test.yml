@@ -29,7 +29,7 @@ services:
       - ./public:/opt/app/public
       - ./backup:/opt/app/backup
     ports:
-      - 1339:1337
+      - 1344:1337
     networks:
       - strapi-de-sol1
     depends_on:
@@ -60,7 +60,7 @@ services:
       #- strapi-de-sol1-data:/var/lib/postgresql/data/ #using a volume
       - ./data/postgresql/data:/var/lib/postgresql/data/ # if you want to use a bind folder
     ports:
-      - 5434:5432
+      - 5439:5432
     networks:
       - strapi-de-sol1
     healthcheck:
