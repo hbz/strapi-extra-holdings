@@ -3,7 +3,7 @@ services:
   strapi-de-sol1:
     container_name: strapi-de-sol1
     build:
-      dockerfile: ./Dockerfile.prod
+      dockerfile: ./Dockerfile.test
     image: strapi-de-sol1:latest
     restart: unless-stopped
     env_file: .env
