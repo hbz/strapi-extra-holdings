@@ -1,6 +1,6 @@
 # Install a (local) strapi-de-sol1 instance for development using Docker
-You will get an strapi instance with the content model for strapi-de-sol1 provided.
-User accounts and content entries are not included.
+
+You will get a strapi instance with the content model for strapi-de-sol1 provided. User accounts and content entries are not included.
 
 ## Set up
 
@@ -66,7 +66,7 @@ Reverse for restoring from the file:
     docker compose cp config.json strapi-de-sol1:./opt/app/
     docker compose exec strapi-de-sol1 strapi config:restore -f config.json
 
-The current config dump is checked into the repo as `config.json`. *Caution:* credentials (eg. API Tokens) will also be dumped into this file. Be sure your config contains non-sensitiv data only. In doubt you should not commit your config.
+The current config dump is checked into the repo as `config.json`. *Caution:* credentials (eg. API Tokens) will also be dumped into this file. Be sure your config contains non-sensitive data only. In doubt you should not commit your config.
 
 When running the restore command you can choose from different strategies: replace (default), merge, keep.
 
@@ -76,4 +76,4 @@ Read more in the [Strapi docs](https://docs.strapi.io/dev-docs/cli#strapi-config
 
 To deploy changes, go to the repo directory, pull the changes, and rebuild the container (`sudo docker compose -f docker-compose-prod.yml down ; sudo docker compose -f docker-compose-prod.yml up -d --build --force-recreate`).
 
-TODO: Specify deployment.
+For details, see our [internal Wiki](https://dienst-wiki.hbz-nrw.de/spaces/SEM/pages/1559005376/DE-Sol1+Katalogisierung+f%C3%BCr+Stadtarchiv+Solingen).
