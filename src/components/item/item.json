@@ -22,9 +22,6 @@
     "dateModified": {
       "type": "date"
     },
-    "dateAustausch": {
-      "type": "date"
-    },
     "note": {
       "type": "string"
     }
