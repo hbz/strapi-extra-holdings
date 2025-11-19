@@ -38,9 +38,6 @@
     "dateModified": {
       "type": "date"
     },
-    "dateAustausch": {
-      "type": "date"
-    },
     "holdingId": {
       "type": "string"
     },
