@@ -2,14 +2,21 @@ const fetch = require("node-fetch");
 
 module.exports = {
     async beforeUpdate(event) {
-        const data = event.params.data;
-        const [almaMmsId, hbzId, zdbId] =
-            await fetchFields(data.lobidUri, ["almaMmsId", "hbzId", "zdbId"]);
-        data.almaMmsId = almaMmsId;
-        data.hbzId = hbzId;
-        data.zdbId = zdbId;
+        await fetchData(event);
+    },
+    async beforeCreate(event) {
+        await fetchData(event);
     }
 };
+
+const fetchData = async (event) => {
+    const data = event.params.data;
+    const [almaMmsId, hbzId, zdbId] =
+        await fetchFields(data.lobidUri, ["almaMmsId", "hbzId", "zdbId"]);
+    data.almaMmsId = almaMmsId;
+    data.hbzId = hbzId;
+    data.zdbId = zdbId;
+}
 
 const fetchFields = async (lobidUri, fields) => {
     const url = `${lobidUri.replace("#!", "")}?format=json`;
