@@ -72,6 +72,24 @@ When running the restore command you can choose from different strategies: repla
 
 Read more in the [Strapi docs](https://docs.strapi.io/dev-docs/cli#strapi-configurationdump).
 
+### Database
+
+To access the underlying database, first open a bash in the database container:
+
+    docker compose exec -it strapi-de-sol1DB bash
+
+Then connect to the database:
+
+    psql strapi strapi
+
+There, we can query the DB, e.g. to check the number of holdings:
+
+    select count(*) from holdings;
+
+Or delete all holdings (double check to make sure you're in the right container):
+
+    delete from holdings;
+
 ### Deployment
 
 To deploy changes, go to the repo directory, pull the changes, and rebuild the container (`sudo docker compose -f docker-compose-prod.yml down ; sudo docker compose -f docker-compose-prod.yml up -d --build --force-recreate`).
