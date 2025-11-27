@@ -5,7 +5,7 @@ module.exports = {
         await fetchData(event);
     },
     async beforeCreate(event) {
-        await fetchData(event);
+        event.params.data.createdBy && await fetchData(event);
     }
 };
 
