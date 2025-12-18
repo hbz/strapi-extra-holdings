@@ -77,3 +77,6 @@ networks:
   strapi-de-sol1:
     name: strapi-de-sol1
     driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.64.0/20
