@@ -7,4 +7,19 @@ module.exports = ({ env }) => ({
 		enabled: true,
 		resolve: './src/plugins/lookup'
 	},
+	'email': {
+		config: {
+			//provider: 'sendmail',
+			provider: 'nodemailer',
+			providerOptions: {
+				host: '192.168.64.1',
+				port: 25,
+				secure: false,
+				auth: null
+			},
+			settings: {
+				defaultFrom: 'no-reply@hbz-nrw.de',
+			}
+		}
+	},
 });
