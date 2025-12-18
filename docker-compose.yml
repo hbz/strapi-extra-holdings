@@ -25,6 +25,7 @@ services:
       - ./src:/opt/app/src
       - lookup_node_modules:/opt/app/src/plugins/lookup/node_modules/
       - ./package.json:/opt/package.json
+      - ./package-lock.json:/opt/package-lock.json
       - ./.env:/opt/app/.env
       - ./backup:/opt/app/backup
       #- ./public/uploads:/opt/app/public/uploads
