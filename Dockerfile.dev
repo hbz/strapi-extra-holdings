@@ -1,6 +1,11 @@
-FROM node:16-alpine
-# Installing libvips-dev for sharp Compatibility
-RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev nasm bash vips-dev
+FROM node:18-bullseye
+RUN apt-get update && apt-get install -y \
+    less \
+    vim \
+    netcat \
+    iproute2 \
+    telnet \
+    && rm -rf /var/lib/apt/lists/*
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
 RUN chown -R node:node /opt/
