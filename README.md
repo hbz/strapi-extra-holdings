@@ -107,3 +107,13 @@ We create various daily backups for our test and productive instances:
 5. Backup current docker image: `docker image save --output [outputfile] strapi-de-sol1`, restore https://docs.docker.com/reference/cli/docker/image/load/
 
 All backups mentioned above are run by cron. Check `/etc/cron.d/` for the git versioned crontab that contains the specific backups commands and file paths.
+
+## Export holdings for testing
+
+In order to update tests or test the final transformation of lobid-extra-holdings you need to export the holdings with the following steps:
+
+```
+docker compose exec strapi-de-sol1 npm run --silent strapi export -- --file strapi-export --no-encrypt
+docker compose cp strapi-de-sol1:./opt/app/strapi-export.tar.gz .
+zgrep -a -E '"type":"api::holding.holding"' strapi-export.tar.gz > strapi-holdings.ndjson
+```
