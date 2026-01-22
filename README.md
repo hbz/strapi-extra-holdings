@@ -115,5 +115,5 @@ In order to update tests or test the final transformation of lobid-extra-holding
 ```
 docker compose exec strapi-de-sol1 npm run --silent strapi export -- --file strapi-export --no-encrypt
 docker compose cp strapi-de-sol1:./opt/app/strapi-export.tar.gz .
-zgrep -a -E '"type":"api::holding.holding"' strapi-export.tar.gz > strapi-holdings.ndjson
+zgrep -a -E '"type":"api::holding.holding"' strapi-export.tar.gz > strapi-export-holdings.ndjson
 ```
