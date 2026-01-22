@@ -46,6 +46,11 @@
     },
     "holdingInfo": {
       "type": "text"
+    },
+    "doNotIndex": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
