@@ -96,8 +96,6 @@ To deploy changes, go to the repo directory, pull the changes, and rebuild the c
 
 For details, see our [internal Wiki](https://dienst-wiki.hbz-nrw.de/spaces/SEM/pages/1559005376/DE-Sol1+Katalogisierung+f%C3%BCr+Stadtarchiv+Solingen).
 
-
-
 ## Backup and restore
 
 We create various daily backups for our test and productive instances:
