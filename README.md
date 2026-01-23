@@ -95,3 +95,25 @@ Or delete all holdings (double check to make sure you're in the right container)
 To deploy changes, go to the repo directory, pull the changes, and rebuild the container (`sudo docker compose -f docker-compose-prod.yml down ; sudo docker compose -f docker-compose-prod.yml up -d --build --force-recreate`).
 
 For details, see our [internal Wiki](https://dienst-wiki.hbz-nrw.de/spaces/SEM/pages/1559005376/DE-Sol1+Katalogisierung+f%C3%BCr+Stadtarchiv+Solingen).
+
+## Backup and restore
+
+We create various daily backups for our test and productive instances:
+
+1. Backup Postgresql `data` directory: `tar -czf [archivefile] data/`, restore via `restore-data-dir.sh` 
+2. SQL dump of database: `pg_dump [database] -U [user] > | gzip > [dumpfile]` Read more in the [Postgresql docs](https://www.postgresql.org/docs/12/backup-dump.html)
+3. Export strapi data: `strapi export -- --file export_strapi_de-sol1  --no-encrypt` Read more in https://docs.strapi.io/cms/cli#strapi-export, restore https://docs.strapi.io/cms/cli#strapi-import
+4. Dump config: `config:dump -f config.json-dump`, see `config:restore` in https://docs.strapi.io/cms/cli#strapi-configuration-1
+5. Backup current docker image: `docker image save --output [outputfile] strapi-de-sol1`, restore https://docs.docker.com/reference/cli/docker/image/load/
+
+All backups mentioned above are run by cron. Check `/etc/cron.d/` for the git versioned crontab that contains the specific backups commands and file paths.
+
+## Export holdings for testing
+
+In order to update tests or test the final transformation of lobid-extra-holdings you need to export the holdings with the following steps:
+
+```
+docker compose exec strapi-de-sol1 npm run --silent strapi export -- --file strapi-export --no-encrypt
+docker compose cp strapi-de-sol1:./opt/app/strapi-export.tar.gz .
+zgrep -a -E '"type":"api::holding.holding"' strapi-export.tar.gz > strapi-export-holdings.ndjson
+```
